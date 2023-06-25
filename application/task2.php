@@ -55,11 +55,11 @@ $cargoes = [
 
 foreach ($cargoes as $cargo) {
     $rightCranes = searchCranes($cargo, $cranes);
-    $messages[] =  createMessage($rightCranes, $cargo);
+    $messages[] = createMessage($rightCranes, $cargo);
 }
 
 
-function searchCranes($cargo, $cranes)
+function searchCranes($cargo, $cranes): array
 {
     $rightCranes = [];
     foreach ($cranes as $crane) {
@@ -70,7 +70,7 @@ function searchCranes($cargo, $cranes)
     return $rightCranes;
 }
 
-function createMessage($rightCranes, $cargo)
+function createMessage($rightCranes, $cargo): string
 {
     if (count($rightCranes) === 0) {
         return "Для передвижения груза массой " . $cargo['weight'] . " тонн на расстояние " . $cargo['distance'] .
@@ -86,19 +86,22 @@ function createMessage($rightCranes, $cargo)
     }
 }
 
-function getCranesNames($rightCranes){
-    $cranesNames = array_map('getCraneName',$rightCranes);
+function getCranesNames($rightCranes): string
+{
+    $cranesNames = array_map('getCraneName', $rightCranes);
     return implode(', ', $cranesNames);
 }
 
-function getCraneName($rightCranes){
+function getCraneName($rightCranes)
+{
     return $rightCranes['name'];
 }
+
 ?>
 
 
 <ul>
-    <?php foreach($messages as $message) : ?>
+    <?php foreach ($messages as $message) : ?>
         <li><?= $message ?></li>
     <?php endforeach; ?>
 </ul>

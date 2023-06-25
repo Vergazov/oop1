@@ -1,7 +1,7 @@
 <?php
 
 
-class CargoesList
+class Cargoes
 {
     public array $cargoes = [
         [

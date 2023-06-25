@@ -5,7 +5,7 @@ require_once 'MessageCreator.php';
 
 class Dispatcher
 {
-    public function getRightCranes(){
+    public function getRightCranes($cargoesList){
 
     }
 }

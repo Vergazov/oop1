@@ -8,8 +8,13 @@ require_once 'cranes/Dispatcher.php';
 
 $cargoesList = new Cargoes();
 $getRightCranes = new Dispatcher();
-$messages = $getRightCranes->getRightCranes($cargoesList->cargoes);
 
+foreach ($cargoesList->cargoes as $cargo){
+    $messages[] = $getRightCranes->getRightCranes($cargo);
+}
+//echo '<pre>';
+//print_r($messages);
+//echo '</pre>';
 ?>
 
 <ul>

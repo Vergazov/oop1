@@ -1,6 +1,5 @@
 <?php
 
-
 class Cargoes
 {
     public array $cargoes = [

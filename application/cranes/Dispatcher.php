@@ -8,8 +8,7 @@ class Dispatcher
     public function getRightCranes($cargo): string
     {
        $rightCranes =  (new CranesSearcher())->searchCranes($cargo, $this->getCranes());
-       $messages = (new MessageCreator())->create($rightCranes, $cargo);
-       return $messages;
+        return (new MessageCreator())->create($rightCranes, $cargo);
     }
     private function getCranes(): array
     {

@@ -4,10 +4,10 @@ require_once 'cranes/Cargoes.php';
 require_once 'cranes/Dispatcher.php';
 
 $cargoesList = new Cargoes();
-$getRightCranes = new Dispatcher();
+$chooser = new Dispatcher();
 
-foreach ($cargoesList->cargoes as $cargo){
-    $messages[] = $getRightCranes->getRightCranes($cargo);
+foreach ($cargoesList->getCargoesList() as $cargo){
+    $messages[] = $chooser->getRightCranes($cargo);
 }
 ?>
 

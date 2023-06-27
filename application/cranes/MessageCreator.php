@@ -25,7 +25,7 @@ class MessageCreator
         return implode(', ', $cranesNames);
     }
 
-    private static function getCraneName($rightCranes): string
+    private function getCraneName($rightCranes): string
     {
         return $rightCranes['name'];
     }

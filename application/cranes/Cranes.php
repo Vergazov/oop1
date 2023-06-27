@@ -2,7 +2,12 @@
 
 class Cranes
 {
-    public array $cranes = [
+    public function getCranesList(): array
+    {
+        return $this->cranes;
+    }
+
+    private array $cranes = [
         [
             "name" => "КП-1550",
             "weight" => 50,
@@ -34,4 +39,5 @@ class Cranes
             "distance" => 20
         ],
     ];
+
 }

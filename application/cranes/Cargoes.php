@@ -2,7 +2,12 @@
 
 class Cargoes
 {
-    public array $cargoes = [
+    public function getCargoesList(): array
+    {
+        return $this->cargoes;
+    }
+
+    private array $cargoes = [
         [
             "weight" => 15,
             "distance" => 20

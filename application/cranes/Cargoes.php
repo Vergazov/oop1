@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class Cargoes
 {
     public function getCargoesList(): array

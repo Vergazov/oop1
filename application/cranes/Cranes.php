@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class Cranes
 {
     public function getCranesList(): array

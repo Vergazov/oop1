@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Cranes.php';
+namespace App;
 
 class CranesSearcher
 {

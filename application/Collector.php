@@ -1,7 +1,8 @@
 <?php
 
-require_once 'cranes/Cargoes.php';
-require_once 'cranes/Dispatcher.php';
+namespace App;
+
+require_once __DIR__ . '/../vendor/autoload.php';
 
 $cargoesList = new Cargoes();
 $chooser = new Dispatcher();

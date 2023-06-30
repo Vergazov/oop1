@@ -2,7 +2,7 @@
 
 namespace App;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 $cargoesList = new Cargoes();
 $chooser = new Dispatcher();

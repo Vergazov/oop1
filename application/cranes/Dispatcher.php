@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class Dispatcher
 {
     public function getRightCranes($cargo): string

@@ -4,28 +4,31 @@ namespace App;
 
 class Cargoes
 {
-    public function getCargoesList(): array
+    private int $weight;
+    private int $distance;
+
+    public function __construct(int $weight, int $distance)
     {
-        return $this->cargoes;
+        $this->weight = $weight;
+        $this->distance = $distance;
     }
 
-    private array $cargoes = [
-        [
-            "weight" => 15,
-            "distance" => 20
-        ],
-        [
-            "weight" => 20,
-            "distance" => 15
-        ],
-        [
-            "weight" => 60,
-            "distance" => 5
-        ],
-        [
-            "weight" => 35,
-            "distance" => 10
-        ],
+    public function getWeight()
+    {
+        return $this->weight;
+    }
 
-    ];
+    public function getDistance()
+    {
+        return $this->distance;
+    }
 }
+
+$cargoes = [
+    new Cargoes(15, 20),
+    new Cargoes(20, 15),
+    new Cargoes(60, 5),
+    new Cargoes(35, 10)
+];
+
+

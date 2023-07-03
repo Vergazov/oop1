@@ -4,25 +4,26 @@ namespace App;
 
 require_once 'vendor/autoload.php';
 
-$cargoesList = [
+$cargoes= [
         new Cargoes(15,20),
         new Cargoes(20,15),
         new Cargoes(60,5),
         new Cargoes(35,10),
 ];
+
 $chooser = new Dispatcher();
 
-foreach ($cargoesList as $cargo){
-    $messages[] = $chooser->getRightCranes($cargo->getWeight(),$cargo->getDistance());
+foreach ($cargoes as $cargo){
+    $messages[] = $chooser->getRightCranes( [$cargo->getDistance(),$cargo->getDistance()] );
 }
 
 ?>
-
-<ul>
-    <?php foreach ($messages as $message) : ?>
-        <li><?= $message ?></li>
-    <?php endforeach; ?>
-</ul>
+<!---->
+<!--<ul>-->
+<!--    --><?php //foreach ($messages as $message) : ?>
+<!--        <li>--><?//= $message ?><!--</li>-->
+<!--    --><?php //endforeach; ?>
+<!--</ul>-->
 
 
 

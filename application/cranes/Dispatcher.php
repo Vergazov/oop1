@@ -13,14 +13,12 @@ $cranesList = [
 class Dispatcher
 {
 
-    public function getRightCranes($weight,$distance,$cranesList): string
+    public function getRightCranes($weight,$distance,$cranesList): array
     {
-       $rightCranes = (new CranesSearcher())->search($cargo, (new Cranes())->getCranesList());
-        return (new MessageCreator())->create($rightCranes, $cargo);
-
         foreach ($cranesList as $crane){
-            $rightCranes = (new CranesSearcher())->search($cargoWeight,$cargoDistance,$craneWeight,$craneDistance);
+            $rightCranes[] = (new CranesSearcher())->search($cargoWeight,$cargoDistance,$craneWeight,$craneDistance,$craneName);
         }
+        return $rightCranes;
 
     }
 

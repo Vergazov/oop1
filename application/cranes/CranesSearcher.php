@@ -4,14 +4,10 @@ namespace App;
 
 class CranesSearcher
 {
-    public function search($cargo, $cranes): array
+    public function search($cargoWeight,$cargoDistance,$craneWeight,$craneDistance,$craneName): string
     {
-        $rightCranes = [];
-        foreach ($cranes as $crane) {
-            if ($crane['weight'] >= $cargo['weight'] && $crane['distance'] >= $cargo['distance']) {
-                $rightCranes[] = $crane;
-            }
+        if ($craneWeight >= $cargoWeight && $craneDistance >= $cargoDistance) {
+            return $craneName;
         }
-        return $rightCranes;
     }
 }

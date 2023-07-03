@@ -24,11 +24,5 @@ class Cargoes
     }
 }
 
-$cargoes = [
-    new Cargoes(15, 20),
-    new Cargoes(20, 15),
-    new Cargoes(60, 5),
-    new Cargoes(35, 10)
-];
 
 

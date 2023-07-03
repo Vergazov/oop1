@@ -4,7 +4,7 @@ namespace App;
 
 class CranesSearcher
 {
-    public function searchCranes($cargo, $cranes): array
+    public function search($cargo, $cranes): array
     {
         $rightCranes = [];
         foreach ($cranes as $crane) {

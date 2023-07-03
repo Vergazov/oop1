@@ -4,42 +4,39 @@ namespace App;
 
 class Cranes
 {
-    public function getCranesList(): array
+    private string $name;
+    private int $weight;
+    private int $distance;
+
+    public function __construct(string $name, int $weight, int $distance)
     {
-        return $this->cranes;
+        $this->weight = $weight;
+        $this->distance = $distance;
+        $this->name = $name;
     }
 
-    private array $cranes = [
-        [
-            "name" => "КП-1550",
-            "weight" => 50,
-            "distance" => 12
-        ],
-        [
-            "name" => "КП-0042",
-            "weight" => 42,
-            "distance" => 12
-        ],
-        [
-            "name" => "КП-0070",
-            "weight" => 70,
-            "distance" => 8
-        ],
-        [
-            "name" => "КПМ-0215",
-            "weight" => 15,
-            "distance" => 25
-        ],
-        [
-            "name" => "КПМ-0315",
-            "weight" => 15,
-            "distance" => 26
-        ],
-        [
-            "name" => "КПМ-0220",
-            "weight" => 20,
-            "distance" => 20
-        ],
-    ];
+    public function getWeight()
+    {
+        return $this->weight;
+    }
 
+    public function getDistance()
+    {
+        return $this->distance;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
 }
+
+$Cranes = [
+    new Cranes("КП-1550",50,12),
+    new Cranes("КП-0042",42,12),
+    new Cranes("КП-0070",70,8),
+    new Cranes("КПМ-0215",15,25),
+    new Cranes("КПМ-0315",15,26),
+    new Cranes("КПМ-0220",20,20),
+];
+

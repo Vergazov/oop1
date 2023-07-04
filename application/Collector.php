@@ -14,16 +14,16 @@ $cargoes= [
 $chooser = new Dispatcher();
 
 foreach ($cargoes as $cargo){
-    $messages[] = $chooser->getRightCranes( [$cargo->getDistance(),$cargo->getDistance()] );
+    $messages[] = $chooser->getRightCranes( [$cargo->getWeight(),$cargo->getDistance()] );
 }
 
 ?>
-<!---->
-<!--<ul>-->
-<!--    --><?php //foreach ($messages as $message) : ?>
-<!--        <li>--><?//= $message ?><!--</li>-->
-<!--    --><?php //endforeach; ?>
-<!--</ul>-->
+
+<ul>
+  <?php foreach ($messages as $message) : ?>
+     <li><?= $message ?></li>
+  <?php endforeach; ?>
+</ul>
 
 
 

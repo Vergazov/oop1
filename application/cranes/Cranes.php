@@ -4,9 +4,9 @@ namespace App;
 
 class Cranes
 {
-    private string $name;
     private int $weight;
     private int $distance;
+    private string $name;
 
     public function __construct(string $name, int $weight, int $distance)
     {

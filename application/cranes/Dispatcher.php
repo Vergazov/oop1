@@ -5,7 +5,7 @@ namespace App;
 class Dispatcher
 {
 
-    public function getRightCranes($cargo): array
+    public function getRightCranes($cargo): string
     {
         $searcher = new CranesSearcher();
         $cranes = [
@@ -17,9 +17,9 @@ class Dispatcher
             new Cranes("КПМ-0220",20,20),
         ];
         foreach ($cranes as $crane){
-            $rightCranes[] = $searcher->search($cargo,[$crane->getWeight(),$crane->getDistance(), $crane->getName()]);
+            $rightCranes = $searcher->search($cargo,[$crane->getWeight(),$crane->getDistance(), $crane->getName()]);
         }
-        return $rightCranes;
+        return (new MessageCreator())->create($rightCranes, $cargo);
     }
 
 }

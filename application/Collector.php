@@ -15,6 +15,9 @@ $chooser = new Dispatcher();
 
 foreach ($cargoes as $cargo){
     $messages[] = $chooser->getRightCranes( [$cargo->getWeight(),$cargo->getDistance()] );
+//    echo'<pre>';
+//    print_r($messages);
+//    echo'</pre>';
 }
 ?>
 

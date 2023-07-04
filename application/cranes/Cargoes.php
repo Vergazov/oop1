@@ -13,12 +13,12 @@ class Cargoes
         $this->distance = $distance;
     }
 
-    public function getWeight()
+    public function getWeight(): int
     {
         return $this->weight;
     }
 
-    public function getDistance()
+    public function getDistance(): int
     {
         return $this->distance;
     }

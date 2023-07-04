@@ -22,13 +22,8 @@ class MessageCreator
 
     private function getCranesNames($rightCranes): string
     {
-        // $cranesNames = array_map([$this,'getCraneName'], $rightCranes);
         return implode(', ', $rightCranes);
     }
 
-    // private function getCraneName($rightCranes): string
-    // {
-    //     return $rightCranes['name'];
-    // }
 
 }

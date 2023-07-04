@@ -15,17 +15,17 @@ class Cranes
         $this->name = $name;
     }
 
-    public function getWeight()
+    public function getWeight(): int
     {
         return $this->weight;
     }
 
-    public function getDistance()
+    public function getDistance(): int
     {
         return $this->distance;
     }
 
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }

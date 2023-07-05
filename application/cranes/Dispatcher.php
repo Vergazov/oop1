@@ -16,7 +16,7 @@ class Dispatcher
             new Cranes("КПМ-0315",15,26),
             new Cranes("КПМ-0220",20,20),
         ];
-//        $rightCranes = [];
+        $rightCranes = [];
         foreach ($cranes as $crane){
             if($searcher->search($cargo,[$crane->getWeight(),$crane->getDistance(), $crane->getName()]) !== NULL){
                 $rightCranes[] = $searcher->search($cargo,[$crane->getWeight(),$crane->getDistance(), $crane->getName()]);

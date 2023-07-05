@@ -2,13 +2,15 @@
 
 namespace App;
 
-class Cargoes
+class Crane
 {
     private int $weight;
     private int $distance;
+    private string $name;
 
-    public function __construct(int $weight, int $distance)
+    public function __construct(string $name, int $weight, int $distance)
     {
+        $this->name = $name;
         $this->weight = $weight;
         $this->distance = $distance;
     }
@@ -22,8 +24,12 @@ class Cargoes
     {
         return $this->distance;
     }
-}
 
+    public function getName(): string
+    {
+        return $this->name;
+    }
+}
 
 
 

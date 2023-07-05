@@ -16,11 +16,11 @@ class Dispatcher
             new Cranes("КПМ-0315",15,26),
             new Cranes("КПМ-0220",20,20),
         ];
+//        $rightCranes = [];
         foreach ($cranes as $crane){
-            $rightCranes[] = $searcher->search($cargo,[$crane->getWeight(),$crane->getDistance(), $crane->getName()]);
-           echo'<pre>';
-           print_r([$crane->getWeight(),$crane->getDistance(), $crane->getName()]);
-           echo'</pre>';
+            if($searcher->search($cargo,[$crane->getWeight(),$crane->getDistance(), $crane->getName()]) !== NULL){
+                $rightCranes[] = $searcher->search($cargo,[$crane->getWeight(),$crane->getDistance(), $crane->getName()]);
+            }
         }
         return (new MessageCreator())->create($rightCranes, $cargo);
     }

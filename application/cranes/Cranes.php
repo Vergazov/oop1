@@ -10,9 +10,9 @@ class Cranes
 
     public function __construct(string $name, int $weight, int $distance)
     {
+        $this->name = $name;
         $this->weight = $weight;
         $this->distance = $distance;
-        $this->name = $name;
     }
 
     public function getWeight(): int

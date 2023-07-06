@@ -4,12 +4,12 @@ namespace App;
 
 class Searcher
 {
-    public function findRight($cargo,$cranes): array
+    public function findRight($cargo,$cranes)
     {
         $rightCranes = [];
         foreach ($cranes as $crane){
             if($cargo->getWeight() <= $crane->getWeight() && $cargo->getDistance() <= $crane->getDistance()){
-                $rightCranes[] = $crane->getName();
+                $rightCranes[] = $crane;
             }
         }
         return  $rightCranes;

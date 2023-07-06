@@ -14,17 +14,27 @@ class MessageCreator
         }
         if ( $amount === 1) {
             return "Чтобы передвинуть груз массой " . $cargo->getWeight() . " на расстояние " . $cargo->getDistance() .
-                " нужен кран марки " . $this->glueCranesNames($rightCranes);
+                " нужен кран марки " . $rightCranes[0]->getName();
+            // Указываю на 0-й индекс, так как если у нас подходящий кран один, то сюда будет передан массив с 1 краном внутри. На него и указываю.
         }
         if ( $amount > 1) {
             return "Чтобы передвинуть груз массой " . $cargo->getWeight() . " тонн на расстояние " . $cargo->getDistance() .
-                " подойдет любой из этих кранов: " . $this->glueCranesNames($rightCranes);
+                " подойдет любой из этих кранов: " . $this->getCranesNames($rightCranes);
         }
     }
 
     private function glueCranesNames($rightCranes): string
     {
         return implode(', ', $rightCranes);
+    }
+
+    private function getCranesNames($rightCranes): string
+    {
+        $cranesNames = [];
+        foreach($rightCranes as $crane) {
+            $cranesNames[] = $crane->getName();
+        }
+        return $this->glueCranesNames($cranesNames);
     }
 
 }

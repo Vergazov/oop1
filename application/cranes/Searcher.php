@@ -4,7 +4,7 @@ namespace App;
 
 class Searcher
 {
-    public function findRight($cargo,$cranes)
+    public function findRight($cargo,$cranes): array
     {
         $rightCranes = [];
         foreach ($cranes as $crane){

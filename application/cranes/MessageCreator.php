@@ -23,10 +23,6 @@ class MessageCreator
         }
     }
 
-    private function glueCranesNames($rightCranes): string
-    {
-        return implode(', ', $rightCranes);
-    }
 
     private function getCranesNames($rightCranes): string
     {
@@ -35,6 +31,11 @@ class MessageCreator
             $cranesNames[] = $crane->getName();
         }
         return $this->glueCranesNames($cranesNames);
+    }
+
+    private function glueCranesNames($cranesNames): string
+    {
+        return implode(', ', $cranesNames);
     }
 
 }

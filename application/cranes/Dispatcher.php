@@ -6,7 +6,7 @@ class Dispatcher
 {
     public function getRightCranes($cargo): string
     {
-        $checker = new Checker();
+        $searcher = new Searcher();
         $cranes = [
             new Crane("КП-1550",50,12),
             new Crane("КП-0042",42,12),
@@ -15,13 +15,8 @@ class Dispatcher
             new Crane("КПМ-0315",15,26),
             new Crane("КПМ-0220",20,20),
         ];
-        $rightCranes = [];
-        foreach ($cranes as $crane){
-            if($checker->isGood($cargo, $crane)){
-                $rightCranes[] = $crane->getName();    
-            }
-        }
-        return (new MessageCreator())->create($rightCranes, $cargo);
+        $rightCranes = $searcher->findRight($cargo, $cranes);
+        return (new MessageCreator())->create($cargo,$rightCranes);
     }
 
 }

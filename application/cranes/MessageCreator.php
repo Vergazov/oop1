@@ -4,7 +4,7 @@ namespace App;
 
 class MessageCreator
 {
-    public function create($rightCranes, $cargo): string
+    public function create($cargo, $rightCranes): string
     {
         $amount = count($rightCranes);
 
@@ -13,18 +13,30 @@ class MessageCreator
                 " подходящего крана не найдено";
         }
         if ( $amount === 1) {
+            $crane = $rightCranes[0];
             return "Чтобы передвинуть груз массой " . $cargo->getWeight() . " на расстояние " . $cargo->getDistance() .
-                " нужен кран марки " . $this->glueCranesNames($rightCranes);
+                " нужен кран марки " . $crane->getName();
+            // Указываю на 0-й индекс, так как если у нас подходящий кран один, то сюда будет передан массив с 1 краном внутри. На него и указываю.
         }
         if ( $amount > 1) {
             return "Чтобы передвинуть груз массой " . $cargo->getWeight() . " тонн на расстояние " . $cargo->getDistance() .
-                " подойдет любой из этих кранов: " . $this->glueCranesNames($rightCranes);
+                " подойдет любой из этих кранов: " . $this->getCranesNames($rightCranes);
         }
     }
 
-    private function glueCranesNames($rightCranes): string
+
+    private function getCranesNames($rightCranes): string
     {
-        return implode(', ', $rightCranes);
+        $cranesNames = [];
+        foreach($rightCranes as $crane) {
+            $cranesNames[] = $crane->getName();
+        }
+        return $this->glueCranesNames($cranesNames);
+    }
+
+    private function glueCranesNames($cranesNames): string
+    {
+        return implode(', ', $cranesNames);
     }
 
 }

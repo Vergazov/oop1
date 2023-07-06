@@ -16,7 +16,7 @@ class Dispatcher
             new Crane("КПМ-0220",20,20),
         ];
         $rightCranes = $searcher->findRight($cargo, $cranes);
-        return (new MessageCreator())->create($rightCranes, $cargo);
+        return (new MessageCreator())->create($cargo,$rightCranes);
     }
 
 }

@@ -4,7 +4,7 @@ namespace App;
 
 class MessageCreator
 {
-    public function create($rightCranes, $cargo): string
+    public function create($cargo, $rightCranes): string
     {
         $amount = count($rightCranes);
 

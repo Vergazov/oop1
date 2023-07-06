@@ -13,6 +13,5 @@ class Searcher
             }
         }
         return  $rightCranes;
-
     }
 }
